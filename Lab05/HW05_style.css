@@ -1,0 +1,60 @@
+@charset "UTF-8";
+html, body {
+	/* padding 0px, margin 0px, height 100%*/
+
+	padding:0px;
+	margin:0px;
+	height:100%;
+
+
+}
+
+h1 {
+	
+	/*margin 0px, center 정렬*/ 
+	margin:0px;
+	text-align:center;
+	
+	
+}
+
+header { 	
+	
+		/* height 지정, background-color 지정, overflow하면 hidden*/
+ 	height:20%;
+ 	background-color:#aaa5d9;
+ 	overflow:hidden;
+ 
+ }
+
+nav{
+	
+		/* height, width 지정  , background-color 지정, float 프로퍼티 left, overflow하면 visible*/
+	height:70%;
+	width:20%;
+	background-color:#a5d9b4;
+	float:left;
+	overflow:visible;
+
+
+}
+
+section {
+		/* height, width 지정  , background-color 지정, float 프로퍼티 left, overflow하면 scroll*/
+		height:70%;
+		width:80%;
+		background-color:#f8ffb5;
+		float:left;
+		overflow:scroll;
+ 	
+ }
+
+ footer {
+ 		/* height, width 지정  , background-color 지정, float 프로퍼티 left, overflow하면 auto*/
+ 		height:10%;
+ 		width:100%;
+ 		background-color:#ffd9f9;
+ 		float:left;
+ 		overflow:auto;
+
+ }

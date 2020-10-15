@@ -1,0 +1,6 @@
+@charset "UTF-8";
+nav a {height:20px; width: 200px; }
+nav {margin:0 0 20px 0; }
+nav ul li {list-style:none}
+
+nav a{display:block; padding:5px;}

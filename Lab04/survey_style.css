@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* import문을 사용해서 HW04_style.css를 불러오기*/
+@import url( HW04_style.css);
+
+form {
+	
+	/*
+		- 배경 : pink
+		- 테두리 스타일 : none
+		- 테두리 두께 : 1px
+		- 왼쪽, 오른쪽 여백 : 10px
+	*/
+	background-color:pink;
+	border: 1px none;
+	margin-left: 10px;
+	margin-right:10px;
+
+}
+
+span {
+	/*
+		- 글씨체 : gothic
+		- bold
+		- 글자색 : blue
+	*/
+	font-family: "gothic",san-serif;
+	font-weight:bold;
+	color:blue;
+	
+}
+
+label{
+	font-family:"휴먼편지체" ,Sans-Serif;
+	font-size:1em;
+	text-indent: 1em;
+}

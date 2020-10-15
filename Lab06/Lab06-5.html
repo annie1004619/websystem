@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>eval()로 수식 계산</title>
+</head>
+<body>
+<h3>eval()로 수식 계산</h3>
+<hr>
+<script>
+
+//prompt() 사용해서 수식입력
+var str = prompt("수식입력", "");
+
+
+//eval()함수 써서 수식 계산후 -->  document.write()
+
+var res = eval(str);
+
+document.write(str+"="+res);
+
+
+</script>
+</body>
+</html>

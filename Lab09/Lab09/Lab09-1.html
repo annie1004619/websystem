@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>라디오 버튼과 이미지 출력</title>
+<script>
+function printInitImage() {	
+	var found = null;
+	//name=fruits인 모든 애들을 가져와 -> radio 객체 return
+	var fruits=document.getElementsByName("fruits");
+	
+	//checked된 radio button -> found에 저장
+	for(var i=0;i<fruits.length;i++){
+		if(fruits[i].checked){
+			found = fruits[i];
+			break;
+		}
+	}
+	//found가 not null이면
+	 if(found != null)
+	//printImage - function call <value 넘겨주기>
+		{
+			printImage(found.value);
+		}
+}
+
+function printImage(imgFile) {
+	//id = "img"인 객체 가져오기
+	var img = document.getElementById("img");
+	img.src = imgFile;
+	//image file 지정
+
+}
+</script>
+</head>
+<!-- 브라우저에 웹 페이지 loading이 완료되었을 때 function call -->
+<body onload="printInitImage()">
+<h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+<hr>
+<form>
+	<!-- value 넘겨주기 -->
+	<input type="radio" name="fruits" value="media/banana.png"
+		onclick="printImage(this.value)">바나나
+	<input type="radio" name="fruits" value="media/mango.png"
+		onclick="printImage(this.value)" >망고
+	<input type="radio" name="fruits" value="media/apple.png"
+		onclick="printImage(this.value)" checked>사과
+</form>
+<img id="img" src="" width="100" height="120" alt="선택 이미지">
+</body>
+</html>

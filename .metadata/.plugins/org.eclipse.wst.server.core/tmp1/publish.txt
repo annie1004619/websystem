@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Sat Jun 27 23:54:02 KST 2020
+org.eclipse.jst.jee.server\:Project=C\:\\Users\\\uAE40\uC9C0\uC6D0\\Tomcat9.0\\wtpwebapps\\Project
+org.eclipse.jst.jee.server\:webSysProject=C\:\\Users\\\uAE40\uC9C0\uC6D0\\Tomcat9.0\\wtpwebapps\\webSysProject
+org.eclipse.jst.jee.server\:Lab12_hw=C\:\\Users\\\uAE40\uC9C0\uC6D0\\Tomcat9.0\\wtpwebapps\\Lab12_hw
+org.eclipse.jst.jee.server\:Lab13_hw=C\:\\Users\\\uAE40\uC9C0\uC6D0\\Tomcat9.0\\wtpwebapps\\Lab13_hw

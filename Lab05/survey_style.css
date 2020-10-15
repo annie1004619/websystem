@@ -1,0 +1,52 @@
+@charset "UTF-8";
+html, body {
+	
+		/* padding 0px, margin 0px, height 100%*/
+	padding:0px;
+	margin:0px;
+	height:100%;
+}
+
+h1 {
+	
+		/*margin 0px, center 정렬*/ 
+		margin:0px;
+		text-align:center;
+
+}
+
+header { 	
+	
+	/* height 지정, backgroud-color 지정, overflow하면 hidden*/
+	height:20%;
+	background-color:#d2e3f7;
+	overflow:hidden;
+
+ }
+
+footer {
+	
+	/* height 지정, backgroud-color 지정, overflow하면 hidden*/
+	height:20%;
+	background-color:#5298eb;
+	overflow:hidden;
+
+ }
+
+form {
+	
+	/* height 지정, backgroud-color 지정, border : solid, 1px, color 지정 , margin 10px (top,bottom,left,right 모두)*/
+	height:70%;
+	background-color:#ffb8f4;
+	border:solid 1px red;
+	margin: 10px;
+
+}
+
+span {
+	
+	/* font : gothic, bold, color 지정 */
+	font:gothic bold;
+	color:#b838fc;
+
+}

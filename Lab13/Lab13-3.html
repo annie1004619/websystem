@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>watchPosition()으로 반복 위치 서비스</title></head>
+<body>
+<h3>watchPosition()으로 반복 위치 서비스</h3>
+<hr>
+<div id="msg">이곳에  위치 정보 출력</div>
+<div id="map"></div>
+<script>
+//  브라우저가 위치정보 서비스를 제공하는지 확인
+	// 제공하지 않으면 alert창
+if(!navigator.geolocation) 
+	alert("지원하지 않음");
+// 제공한다면
+
+else {
+	// watchPosition()의 마지막 매개 변수로 전달될 객체 생성 - 세 개의 값을 가짐
+		//위치에 대한 정확도
+		// 위치 감지 요청 제한시간
+		// 위치 정보를 저장하고 있는 시간(ms 단위)
+	var options = { // watchPosition()의 마지막 매개 변수로 전달  
+		enableHighAccuracy: false,
+		timeout: 5000,
+		maximumAge: 0 };
+	// 이미지 객체 생성
+    var img = new Image();
+	// 위치 정보 몇 번 갱신 했는지 세는 변수
+	var count=0;
+	var watchID; 
+
+	// changed() 콜백 함수를 등록하고, 반복 위치 서비스 시작
+	
+}
+
+//위치가 바뀌면 changed()가 호출되고, 위치 정보가 들어 있는 position 객체가 매개 변수로 넘어온다.
+function changed(position) {
+	 // 5번만 서비스 
+	 	// 5번 갱신했으면 반복 서비스 종료 - clearWatch 사용
+
+		// "위치 서비스 종료 출력"
+		// 리턴
+
+	}
+	//받아온 position 객체의 coodinates- 위도 / 경도 프로퍼티 접근
+	var lat; // 변경된 위도
+	var lon ; // 변경된 경도
+	var text = count + ": (위도 " + lat + "°, 경도 " + lon + "°)로 변경됨<br>";
+	document.getElementById("msg").innerHTML = text; // 위치 정보 출력
+	
+	// 지도 이미지 갱신
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat
+    			+ "," + lon + "&zoom=13&size=400x300&sensor=false&markers=color:red%7Clabel:C%7C"+lat +"," +lon+"&key=자신의 API 키 입력";
+    // 처음이면 구글 지도 이미지 부착
+    	// 지도 이미지 부착 
+	// 갱신 회수 증가
+}
+</script>
+</body></html>

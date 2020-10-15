@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방문 요일에 따라 변하는 배경색</title></head>
+<body>
+<h3>일요일은 pink, 다른 요일은 gold 배경</h3>
+<hr>
+<script>
+// 요일을 원소로 가지는 배열 생성
+var week=["일","월","화","수","목","금","토"];
+//현재 시간 값을 가진 Date 객체 생성
+var current = new Date(); 
+if(current.getDay()==0)
+// 일요일이면
+	// 배경색 지정 -> document.body.style.backgroundColor = "pink";
+	document.body.style.backgroundColor = "pink";
+// 그 외의 경우
+else
+	// 배경색 지정 -> document.body.style.backgroundColor = "gold";
+	document.body.style.backgroundColor = "gold";
+// 오늘은 며칠, 무슨 요일인지 출력 -> Date 객체 및 배열 활용 
+document.write("오늘: ");
+document.write(current.getDate()+"일, ");
+document.write(week[current.getDay()]+"요일<br>");
+</script>
+</body>
+</html>

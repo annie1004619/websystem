@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\websys\1711412\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+517616298.index
+627855473.index
+2716206630.index
+449384428.index
+954043804.index
+4259460667.index
+4061496816.index
+2791724495.index
+3016749915.index
+3074706026.index
+3416679399.index

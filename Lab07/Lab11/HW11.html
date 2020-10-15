@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스에 파이 차트 그리기</title>
+<script>
+// 학점 별로 파이의 배경색
+var colors = ["blue", "green", "yellow", "magenta", "red"];
+var grades = ["A", "B", "C", "D", "F"];
+var canvas;
+var context;
+var inputObjs;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	context = canvas.getContext("2d");
+	inputObjs = document.getElementsByClassName("num");	
+}
+function drawChart() {
+	var total = 0; // 전체 학생 수
+	//입력된 학점별 학생 수를 더해서 전체 학생 수 더하기
+		//입력된 학생 수를 integer로 변환
+		// 수가 아닌 경우 혹은 0보다 작거나 같은 경우
+			// 0을 출력하고 더하지 않고 다음 루프로
+		//양의 정수를 잘 받은 경우
+			//더하기
+	}
+	
+	//total이 0일경우 
+		// 입력된 것이 없기 때문에 그냥 리턴
+
+	//이전에 그려진 그림 지우기 
+	
+	// 학점별로 파이 그리기
+	//원의 중심(x,y)
+	var x // 캔버스 width 의 중심 
+	var y  // 캔버스 height 의 중심
+	var radius // 반지름 설정 : canvas 크기에 따라서 크기 조절
+	var startAngle = 0; //시작각도
+	var endAngle = 0; //끝 각도
+	//input 객체만큼 반복
+	
+		//input 값 가져오기 - int로 변환
+		var n;
+		//0이면
+		
+			// 다음 학점 그리기로 이동. 
+			// 만일 이 코드가 없으면, 아래에서 시작 각도와 끝각도가 같아서 360도 원호를 그리게 됨
+		
+		//360도 중 비율 계산해서 각도	
+		var deg;
+		//radian 값으로 변환
+		var rad;
+		//끝 각도 계산
+		endAngle;
+	
+		// 새로운 경로 시작
+		
+		//시작점
+		
+		// 각 원호 그리기
+		
+		// 원호의 끝점과 중심을 연결하여 닫힌 원도 만들기
+		
+		// 원호 내부에 칠할 색과 외곽선 색을 동일하게 지정
+		
+		
+		// 원호 내부 칠하기
+		// 원호 외곽선 그리기
+		
+		//다음을 위해 끝각도 저장
+		
+	}
+	
+	// 텍스트 출력
+	context.font = "normal 15px gothic";
+	context.fillStyle = "blue";
+	//input 객체만큼 반복해서 글씨쓰기
+	
+		//input 객체의 값
+		var n;
+		//비율 계산
+		var percentage;
+		//filltext로 글씨 써주기(ppt 예시 참고)
+		
+	}	
+}
+</script>
+</head>
+<body onload="init()">
+<h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기
+</h3>
+<hr>
+A <input type="number" id="a" class="num" value="0"> 명
+B <input type="number" id="b" class="num" value="0"> 명 
+C <input type="number" id="c" class="num" value="0"> 명 <br>
+D <input type="number" id="d" class="num" value="0"> 명  
+F <input type="number" id="f" class="num" value="0"> 명 
+<input type="button" value="차트그리기" onclick="drawChart()"><br>
+<canvas id="canvas" width="600" height="400" style="background-color:aliceblue">
+</canvas>
+</body>
+</html>

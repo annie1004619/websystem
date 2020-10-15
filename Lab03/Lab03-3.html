@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도형 서식 폼 만들기</title></head>
+<body>
+<h3>도형 서식 폼 만들기</h3>
+<hr>
+<form>
+
+
+<fieldset>
+
+	<!-- 그룹의 제목 -->
+	<legend>도형 서식 입력</legend>
+	
+	<!-- 선종류 : 콤보박스 만들기, 크기 3, 콤보박스 이름은 linetype, option에 각각 value 주기 -->
+	<label>
+	선종류<select size=3 name="Linetype">
+			<option value="1">선없음</option>
+			<option value="2">실선</option>
+			<option value="3">점선</option>
+			</select>
+	</label>
+
+	<br><br>
+	
+	<!-- 선두께 : 스핀버튼, 최소 1, 최대 50, 1씩 증가 -->
+	<label>
+		선두께<input type="number" min="1" max="50" step="1">
+	</label>
+	
+	<!-- 선색 : 색입력, 디폴트 값은 #00bfff -->
+	<label>
+	선색<input type="color" value="#00bfff">
+	</label>
+	
+	<br><br>
+	
+	<!-- 투명도(0~100) : 슬라이드바, "transparency" list 가져오기, 최소 0, 최대 100 -->
+	<label>
+	투명도(0~100)<input type="range" list="transparency" min="0" max="100">
+	<datalist id="transparency">
+		<option value="0" label="투명">
+		<option value="50" label="중간">
+		<option value="100" label="불투명">
+
+	</datalist>
+	</label>
+	
+	<!-- datalist 
+			- 0, 투명
+			- 50, 중간
+			- 100, 불투명	
+	-->
+
+
+<br>
+
+
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>drawPolygon() 만들기</title>
+<script>
+function drawPolygon(ctx, xArray, yArray) {
+	//빈 경로 만들기
+	
+	//시작점 설정
+	
+	//직선추가
+	
+	
+	
+	//끝점과 시작점 연결
+	
+	//context 경로 속 모든 line을 캔버스에 그리기
+	
+}
+</script>
+</head>
+<body>
+<h3>drawPolygon() 만들기</h3>
+<hr>
+<canvas id="myCanvas" width="220" height="220" 
+        style="background-color:aliceblue"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+var xs = [100, 10, 150, 210];
+var ys = [10, 100, 200, 60];
+drawPolygon(context, xs, ys);
+</script>
+</body>
+</html>

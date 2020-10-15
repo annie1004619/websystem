@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>여행을 갑시다.</title>
+<script>
+function store(key, obj) {
+	//브라우저가 localstorage 지원하는지 확인 -> 없으면 alert창
+	if(!window.localStorage){
+		alert("세션스토리지를 지원하지 않습니다.");
+		return;}
+	// 사용자가 선택한 옵션의 value 가져오기
+	var val = obj.options[obj.selectedIndex].value;
+	// 로컬스토리지에 저장
+	localStorage.setItem(key,val);
+	
+}
+</script>
+<style>
+select {
+	margin-left : 20px;
+}
+div {
+	display : inline-block;
+	width : 150px;
+	border : 1px solid yellowgreen;
+	padding-left : 10px;
+	padding-bottom : 20px;
+}
+</style>
+</head>
+<body>
+<h3>여행 갑시다</h3>
+<hr>
+<form>
+<div>
+<p>도시를 선택하세요</p>
+<select size="3" onchange="store('city', this)">
+	<option value="로마">로마</option>
+	<option value="프라하">프라하</option>
+	<option value="바르셀로나">바르셀로나</option>
+</select>
+</div>
+<div>
+<p>음식을 선택하세요</p>
+<select size="3" onchange="store('food', this)">
+	<option value="봉골레">봉골레</option>
+	<option value="돌체라떼">돌체라떼</option>
+	<option value="티라미슈">티라미슈</option>
+</select>
+</div>
+</form>
+</body>
+</html>

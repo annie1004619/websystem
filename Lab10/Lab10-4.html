@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>눈 내리는 사걀의 마을</title>
+<style>
+body {
+	background-image : url("media/snow.jpg");
+	background-size : 100%;
+	background-repeat : no-repeat;
+}
+div.snow {
+	position : absolute;
+	font-size : 40px;
+	color : white;
+	padding : 0px;
+	margin : 0px;
+}
+</style>
+<script>
+var snow = new Array(30);					// 눈송이 30개에 대한 array
+var x = new Array(30);						// 눈송이 각각의 x좌표 array
+var y = new Array(30);						// 눈송이 각각의 y좌표 array
+
+
+function fall() {
+	for(i=0; i<30; i++){
+	    //눈송이의 다음 y좌표 - 10씩 떨어짐
+	  y[i] += 10;
+		//땅에 닿은 눈송이에 대해 새로운 눈송이를 생성
+		if(y[i] >= window.innerHeight-60){
+			//새로운 x 좌표(random number)
+			y[i] = 0;
+	    	//다시 위에서 내림
+			x[i] = Math.floor(Math.random()*(window.innerWidth-100)+50);
+		}
+		snow[i].style.top = y[i] + "px";
+		snow[i].style.left = x[i] + "px";
+		
+		//x, y 좌표 설정
+	
+	}
+	// timer 지정 되어 있지 않으면 timer setting
+	setTimeout("fall()",50);
+	
+}
+
+function makeSnow() {
+	// window.innerHeight는 현재 윈도우의 브라우저 영역의 높이
+	// window.innerWidth는 현재 윈도우의 브라우저 영역의 폭
+	
+	for(var i=0; i<30; i++) { // 30 개의 눈송이 생성
+		//눈송이의 x좌표 지정 (random number) 
+		x[i] = Math.floor(Math.random()*(window.innerWidth-100)+50);
+		//최초 눈송이의 y좌표 지정 (random number)
+		y[i] = Math.floor(Math.random()*(window.innerHeight-60));
+		
+		
+		// <div id="snowobj0,1,2...">*</div> 생성
+		var divtag = "<div class ='snow' id=snowobj" + i+">*</div>";
+
+		//divtag - document.write()
+		document.write(divtag);
+		
+		// <div> DOM 객체 기억 - <div> object를 snow[i]에
+		snow[i] = document.getElementById("snowobj"+i);
+		
+		//snow[i]의 x, y 좌표 설정 "px" 단위 빼먹지 마세요!
+		snow[i].style.top = y[i] + "px";
+		snow[i].style.left = x[i] + "px";
+		
+		
+		
+	}
+}
+
+</script>
+</head>
+<body onload="fall()">
+<script>
+makeSnow(); // 문서가 로딩되는 단계에서 눈(*)을 출력하는 <div> 객체 생성
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>갬블링 게임</title>
+<style>
+table {
+	border : 1px solid violet;
+	border-collapse : collapse; 
+}
+td {
+	width : 50px;
+	height : 50px;
+	padding : 0px;
+	font : italic 50px consolas, sans-serif;
+	color : blue;
+	text-align : center;
+	background : linen;
+}
+div#msg {
+	font : italic 18px consolas, sans-serif;
+	color : magenta;
+	margin-top : 10px;
+}
+</style>
+<script>
+var gameon = true; // 게임이 진행 중이면 true
+var gameArray = [0, 0, 0]; // 3 개수 숫자 저장
+//
+function gen(e) {
+	
+	//gameon이 true인지 확인 => 아니면 return
+	if(!gameon)
+		return;
+	
+	// 0~2 사이의 난수 (Math.random() 사용 -> Lab07 참고)
+	var num = Math.floor(Math.random()*3);
+	//event 호출한 object -> obj : 이벤트를 호출한 td가 obj에 저장
+	var obj = e.target; 
+	
+	//obj의 값을 random number로
+	obj.innerHTML = num;
+	
+	//array에 값 넣어주기(순서에 따라)
+	if(obj.id =="first")
+		gameArray[0]=num;
+	if(obj.id=="second")
+		gameArray[1]=num;
+	//"thrid"이면 msg setting -> 모두 같아야지만 success
+	if(obj.id=="third"){
+		gameArray[2]=num;
+		if(gameArray[0]==gameArray[1]&&gameArray[1]==gameArray[2])
+			document.getElementById("msg").innerHTML="Success(click here to do again)";
+		else
+			document.getElementById("msg").innerHTML="fail(click here to do again)";
+	}
+		
+	
+}
+
+//
+function reset() {
+	// array 3 개의 수 모두 - initialize
+	gameArray[0]=0;
+	gameArray[1]=0;
+	gameArray[2]=0;
+	//"first", "second", "third", "msg" - initialize
+	document.getElementById("first").innerHTML ="0";
+	document.getElementById("second").innerHTML ="0";
+	document.getElementById("third").innerHTML ="0";
+	document.getElementById("msg").innerHTML ="";
+	//gameon - initialize
+	gameon = true;
+
+}
+</script>
+</head>
+<body>
+<h3>갬블링 게임</h3>
+각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+<hr>
+<table>
+<tr>
+<td id="first" onclick="gen(event)">0</td>
+<td id="second" onclick="gen(event)">0</td>
+<td id="third" onclick="gen(event)">0</td>
+</tr>
+</table>
+<div id="msg" onclick="reset()"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>워커 태스크 만들기</title>
+<script>
+var worker=null;
+
+function startWorkTask() {
+	// 워커 태스크를 생성하고  Lab13-2_js.js를 실행하도록 지시
+	worker = new Worker("Lab13-2_js.js");
+}
+
+function calculate() {
+	// 워커 객체가 생성되었는지 확인
+		// 문제 있으면 return
+	if(worker == null) {
+		alert("워커 태스크가 만들어지지 않았음");		
+		return; // 어떤 문제가 있는 상태
+	}
+	
+	// 워커 태스크로 보낼 객체(parameters) 생성 : 프로퍼티 - op1, op2 
+
+	// 입력 받은 점수를 워커 태스크로 보내기
+
+	
+	// 워커 태스크로부터 결과 수신 대기하는 리스너 등록
+		// 결과 "result" 텍스트 창에 출력
+	
+}
+</script>
+</head>
+<body onload="startWorkTask()">
+<h3>곱셈하기</h3>
+<hr>
+<form>
+<input id="op1" type="number" value="0"> x
+<input id="op2" type="number" value="0"> 
+<input type="button" onclick="calculate()" value="곱하기">
+<input id="result" type="text" value="0">
+</form>
+</body>
+</html>

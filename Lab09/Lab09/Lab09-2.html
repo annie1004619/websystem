@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onmousemove</title>
+<script>
+var cursor; // 커서 이미지를 가진 <div> 객체
+function makeCursor() {
+	//id="cursor"인 object 가져오기
+	cursor = document.getElementById("cursor");
+	//document 위에서 마우스를 움직이면 리스너가 실행되도록 
+		// - onmousemove 리스너 익명함수 작성
+	document.onmousemove = function (e) {
+		// (clientX, clientY)를 사용 
+		// 단위 "px"를 꼭 붙여야 함
+		cursor.style.left = e.clientX + "px";
+		cursor.style.top = e.clientY+ "px"; 
+	}
+}
+</script>
+</head>
+<body onload="makeCursor()">
+<h3>이미지 커서 만들기</h3>
+<hr>
+<p id="p">마우스를 움직이면 이미지로 만든 커서가 마우스를
+따라 다닙니다</p>
+<div id="cursor" style="position:absolute;">
+	<img src="media/spongebob.png" width="30px" height="30px">
+</div>
+</body>
+</html>

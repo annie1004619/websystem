@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>setInterval()/clearInterval()</title>
+<style>
+div {
+	display : inline-block;
+	width : 7em;
+	border : 1px solid gray;
+	background-color : aliceblue;
+	
+}
+</style>
+<script>
+var timerID=null;
+function startClock() {
+	//id="clock"인 object
+	var clock = document.getElementById("clock");
+	//timeout(obj) 호출
+	 timeout(clock);
+	// 1초 마다 timeout() 호출
+	timerID = setInterval("timout(clock)",1000);
+}
+
+//1초마다 timeout이 반복 실행 -> 1초마다 시간을 출력
+function timeout(obj) { //현재시간을 innerHTML로 출력
+	
+	//Date object 생성
+	var current = new Date();
+	//innerHTML -> time을 string으로 return
+	obj.innerHTML = current.toLocaleTimeString();
+	
+}
+
+function controlClock() {
+	//timer가 설정이 되어있지 않으면 -> 시계가 중단된 상태
+	if(timerID == null){
+		//clock에 대해서 timer setting -> 1s마다
+		var clock = document.getElementById("clock");
+		timerID = setInterval("timeout(clock)", 1000);
+		//<div id="clock">의 color = "black"
+		clock.style.color = "black";
+	}
+	
+	
+	//timer가 설정되어 있으면 -> 시계가 정상적으로 가는 상태
+	else{
+		//타이머 중단
+		clearInterval(timerID);
+		//timerID initialize
+		timerID = null;
+		//<div id="clock">의 color = "lightgray"
+		document.getElementById("clock").style.color="lightgray";
+	}
+	
+}
+</script>
+</head>
+<!-- load 되었을 때 function call -->
+<body onload="startClock()" >
+<h3>div 태그에 시계 만들기</h3>
+시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다.
+<hr>
+<!-- click 되었을 때 function call -->
+<div id="clock" onclick="controlClock()" ></div>
+</body>
+</html>
+

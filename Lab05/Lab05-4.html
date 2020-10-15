@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>리스트로 수직 메뉴 만들기</title>
+<style>
+
+/* id : menubar 
+	- 메뉴를 옆으로 붙어 한 줄에 출력되도록, 크기 조절 가능(inline-block)
+	- 배경색 : #a4c5c6
+*/
+#menubar{
+	display: inline-block;
+	background: #a4c5c6;
+}
+
+/* menubar의 unordered list 
+	- block 형이므로 margin 0, padding을 5로 */
+#menubar ul{
+	margin:0; /*들여쓰기 되지않게*/
+	padding: 5px 5px;
+}
+
+/* menubar의 unordered list의 list-item 
+	- 마커삭제
+	- padding : top=bottom=0, left=right=15px
+	- margin-bottom : 5px                                                                                                                                                                            
+	- 배경색 : #d4ebd0*/
+#menubar ul li{
+	list-style-type:none;
+	padding:0px 15px;
+	background:#d4ebd0;
+	margin-bottom:5px;
+}
+
+/* menubar의 unordered list의 list-item의 링크
+	- 글자색 white
+	- 링크 보이지 않게 밑줄 없음 */
+  a{
+  color:white;
+  text-decoration:none;
+  }
+
+/* 링크에 마우스 올리면 글자색 #ffeb99 */
+a:hover{
+	color:#ffeb99;
+}
+
+</style></head>
+<body>
+<nav id="menubar">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Espresso</a></li>
+		<li><a href="#">Cappuccino</a></li>
+		<li><a href="#">Cafe Latte</a></li>
+		<li><a href="#">F.A.Q</a></li>
+	</ul>
+</nav>
+</body>
+</html>

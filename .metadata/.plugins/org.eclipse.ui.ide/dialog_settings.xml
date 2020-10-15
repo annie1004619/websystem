@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\김지원\Desktop\new"/>
+		<item value="C:\Users\김지원\Desktop\webProject"/>
+		<item value="C:\Users\김지원\Desktop\youra"/>
+		<item value="C:\Users\김지원\Documents\카카오톡 받은 파일\html5up-phantom"/>
+		<item value="C:\websys\1711412\Lab13"/>
+		<item value="C:\websys\1711412\Lab12"/>
+		<item value="C:\websys\1711412\Lab11"/>
+		<item value="C:\websys\1711412\Lab10"/>
+		<item value="C:\websys\1711412\Lab09"/>
+		<item value="C:\websys\1711412\Lab08"/>
+		<item value="C:\websys\1711412\Lab07"/>
+		<item value="C:\websys\1711412\Lab06"/>
+		<item value="C:\websys\1711412\Lab05"/>
+		<item value="C:\websys\1711412\Lab04"/>
+		<item value="C:\websys\1711412\Lab03"/>
+		<item value="C:\websys\1711412\Lab01"/>
+	</list>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.ui.wizards.new.project"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="TaskPropertiesDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="314"/>
+		<item key="DIALOG_Y_ORIGIN" value="194"/>
+		<item key="DIALOG_WIDTH" value="970"/>
+		<item key="DIALOG_HEIGHT" value="416"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>단어장 만들기</title>
+<script>
+function store() {
+	//localstorage 있는지 확인 -> 없으면 alert창 & return
+
+	//id="eng"로부터 string 가져오기
+	var engWord;
+
+	engWord = engWord.trim(); //앞 뒤 빈칸 삭제
+	//id="kor"로부터 string 가져오기
+	var korWord;
+	korWord = korWord.trim(); //앞 뒤 빈칸 삭제
+	
+	// 단어가 이미 있는지 확인
+	
+		//confirm()창을 띄워서 수정할 것인지 
+		var ret;
+		// 수정을 원치 않으면 그냥 리턴
+			
+	
+
+	// 로컬 스토리지에 저장(혹은 수정)
+	
+	
+	// 저장 후 <input>에 입력된 단어 지우기
+	
+}
+
+function search() {
+	//localstorage 있는지 확인-> 없으면 alert창 & return
+
+	//id="eng"로부터 string 가져오기
+	var engWord;
+	
+	// 입력된 것이 없으면 리턴
+		
+	engWord = engWord.trim(); // 앞 뒤 빈칸 삭제
+	//영어 단어를 가지고 한글 단어를 가져옴
+	var korWord;
+	//리턴 값이 없다면 
+		//alert창 띄우기
+		//return
+	
+	//id="kor"인 <input> 객체 가져오기
+	var korObj;
+	//<input>창에 한글 출력
+
+}
+
+function remove() {
+	//localstorage 있는지 확인-> 없으면 alert창 & return
+	
+	
+	//영어 단어 가져오기
+	var engWord;
+	//입력된 것이 없으면
+		//return
+	
+	
+	engWord = engWord.trim(); // 앞 뒤 빈칸 삭제
+	// localstorage에 단어가 있는지 확인 - null이면
+		//alert창
+		//return
+	
+		
+	// 단어 삭제
+	
+	
+	// 사용자 입력 칸 지우기
+	
+}
+
+function viewAll() {
+	var win = window.open("HW12-view.html", "viewwin");
+}
+</script>
+</head>
+<body>
+<h3>나의 단어장 만들기</h3>
+<hr>
+<form>
+	<label>영어 <input id="eng" type="text" size="20"></label><br>
+	<label>한글 <input id="kor" type="text" size="20"></label><br>
+	<br>
+	<input type="button" value="단어 저장" onclick="store()">
+	<input type="button" value="영단어 검색" onclick="search()">
+	<input type="button" value="단어 삭제" onclick="remove()">
+	<input type="button" value="전체 보기" onclick="viewAll()">
+</form>
+</body>
+</html>

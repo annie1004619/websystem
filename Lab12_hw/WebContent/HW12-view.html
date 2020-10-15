@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>나의 단어장 모두 출력</title>
+<style>
+table {
+	background-color : aliceblue;
+}
+span {
+	border : 1px solid yellowgreen;
+	padding-left : 3px;
+	padding-right : 3px;
+}
+td, th {
+	padding-right : 5px;
+}
+</style>
+</head>
+<body>
+<h3>나의 단어장 모두 출력</h3>
+<hr>
+<script>
+//단어장 출력 -> Lab12-2-view 참고
+if(window.localStorage) { 
+	//table 시작 태그
+	document.write("<table>");
+	
+	//로컬 스토리지의 개수만큼 반복
+	for(i=0;i<localStorage.length;i++){
+		//키 얻어내기
+		var key = localStorage.key(i);
+		//키를 가져와서 값을 알아내기
+		var val = localStorage.getItem(key);
+		//row 시작
+		document.write("<tr>");
+		//번호 - <span> 사용
+		document.write("<td><span>"+(i+1)+"</span></td>");
+		//날짜 - <th>사용
+		document.write("<th>"+key+"</th>");
+		//메모 
+		document.write("<td>"+val+"</td>");
+		//row 끝
+		document.write("</tr>");
+	}
+	//table 끝
+	document.write("</table>");
+}
+else {
+	alert("지원하지 않습니다."); 
+}
+
+
+</script>
+</body>
+</html>

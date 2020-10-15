@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도시소개</title> <!-- 웹 페이지 타이틀 -->
+</head>
+
+<body>
+
+<!-- 제목 -->
+<h3>도시 소개</h3>
+<!-- 구분선 넣기 -->
+<hr>
+<!-- 정의 리스트 만들기 -->
+<dl>
+	<dt>California</dt>
+	<dd>맑고 화창한 날씨가 좋고 태평양의 아름다운 해변을 가진 멋진 주</dd>
+</dl>
+</body>
+</html>

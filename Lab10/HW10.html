@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>산수를 풀어 봅시다</title>
+<style>
+td {
+	padding-left : 10px;
+	padding-right : 10px;
+}
+</style>
+<script>
+var timerID=null;
+var countDown=31; // 10 초동안 -> 11초에 계산
+function startTimer() {
+	// score initailize
+	var score = 0;
+	//clock object
+	var clock = document.getElementById("clock");
+	// countdown initialize
+	var countdown = countDown;
+	//timer가 있었으면 제거
+	if(timerID != null)
+		clearTimeout(timerID);
+	//timeout(obj) function call
+	timeout(clock)
+}
+function timeout(obj) {
+	//countdown
+	countDown--;
+	//남은시간 보여주기
+	obj.innerHTML = countDown;
+	if(countDown == 0){
+	//30초 지났으면 -> calc
+		
+		calc();}
+	else
+		timerID = setTimeout("timeout(clock)", 1000);
+	//아직 안 지났으면 -> timer setting(1s)
+	
+}
+
+function calc() {
+	//몇 개 맞았는지
+	var total = 0;
+	//"question" array
+	var qArray=document.getElementsByClassName("question");
+	//"answer" array
+	var aArray=document.getElementByClassName("answer");
+	for(i=0; i<qArray.length; i++) {
+		//question 가져오기
+		var question = qArray[i].innerHTML;
+		//correctAnswer 계산 -> eval() //eval() - 실수처리
+		var correctAnswer=Math.floor(eval(question));
+		//userAnswer 가져오기
+		var userAnswer=aArray[i].value;
+		// userAnswer -> integer로 변환
+		var userAnswer_int = parseInt(userAnswer);
+		// 답이 맞는 경우
+		if(userAnswer_int == correctAnswer){
+			//total 증가
+			total++;
+			//textDecoration
+			qArray[i].style.textDecoration="none";
+			}
+		
+		// 답이 틀린 경우
+		else
+			qArray[i].style.textDecoration="line-through";
+			//textDecoration
+			
+	}
+	//score 바꿔주기
+	document.getElementById("score").innerHTML= total;
+	
+}
+
+function makeExpression() {
+	//"question" array
+	var qArray=document.getElementsByClassName("question");
+	//"answer" array
+	var aArray=document.getElementsByClassName("answer");
+	for(i=0; i<qArray.length; i++) {
+		//operand1 : random number(1~20)
+		var number1 = Math.floor(Math.random()*19+1);
+		//operand2 : random number(1~20), 0이 되면 안돼
+		var number2 = Math.floor(Math.random()*19+1) ; // 결코 0이 될 수 없음
+		//operator : random number(0~3)
+		var op = Math.floor(Math.random()*4) ;
+		var operator; 
+		//op -> switch문
+		switch(op){
+		case 0: operator ="+";
+			break;
+		case 1: operator = "-";
+			break;
+		case 2: operator = "*";
+			break;
+		case 3: operator = "/";
+			break;
+		}
+		//question의 innerHTML 'operand operator operand' 형태
+		qArray[i].innerHTML = number1+ operator + number2;
+		//textDecoration
+		qArray[i].style.textDecoration="none";
+		//answer initialize(값 지우기)	
+		aArray[i].innerHTML="";
+		
+	}
+}
+</script>
+</head>
+<body onload="makeExpression();startTimer()">
+<h3>산수 문제를 풀어 봅시다.</h3>
+문제는 자동으로 생성되며, 30초가 지나면 자동 채점됩니다.
+<div>남은 시간 <span id="clock">0</span></div>
+<hr>
+<form>
+<table>
+<tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+<tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+<tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+<tr><td class="question"></td><td><input class="answer" type="text" size="8"></td></tr>
+<tr><td><button type="button" onclick="makeExpression();startTimer()">다시</button></td>
+	<td><span id="score">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

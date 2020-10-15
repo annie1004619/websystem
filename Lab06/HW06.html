@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>별 문자 출력하기</title>
+<script>
+
+//printStar(n) 함수 작성
+function printStar(n){
+	
+	 // 문자열을 숫자로 바꿈
+	 var n=parseInt(n);
+	
+	 if(isNaN(n))
+		 document.write("입력 오류입니다(error)");
+	else if(n<=0)
+		 document.write("입력 오류입니다(error)");
+	 
+	 /* 양의 정수가 입력 되었는지 확인, 정수인지 확인 -> isNaN() 사용
+	 	string or n<=0 --> "입력 오류입니다 (error)" 출력
+	 */
+	
+	 else{
+		 for(i=1;i<=n;i++){
+			 for(j=1;j<=i;j++){
+				 document.write("*");
+			 }
+			 document.write("<br>");
+		 }
+	 // 양의 정수가 입력되었다면 별 출력 
+	}
+	 
+} 
+	 
+	 
+</script>
+</head>
+<body>
+<h3>별 문자 출력하기</h3>
+<hr>
+<script>
+
+//prompt()사용해서 정수 입력 받기
+var num=prompt("정수를 입력하세요");
+ // 함수 호출
+ printStar(num);
+</script>
+</body>
+</html>

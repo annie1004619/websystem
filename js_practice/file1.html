@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body id='body'>
+<h1>JavaScript</h1>
+	<script type="text/javascript">
+	document.write(1+1);
+	var id=prompt("사용자로 부터 정보 받을 수 있는 것");
+	if(id=='annie'){
+		alert('아이디는 annie입니다');
+	}else{
+		alert('아이디는 annie가 아닙니다');
+	}
+	
+	var li =[1,2,3,4,5];
+	alert(li);
+	li.push('f');
+	alert("push"+li);
+	li=li.concat(["김지원","자바스크립트"]);
+	alert("concat"+li);
+	</script >
+	<h1>html</h1>
+	1+1
+	<br/><br/>
+	<input type="button" value="hi" onclick="alert('hi')">
+	<input type="text" onchange="alert('changed')">
+	<input type="text" onkeydown="alert('key down')">
+<br/><br/>
+<input type="button" value="night" onclick="
+document.querySelector('body').style.backgroundColor='black';
+document.getElementById('body').style.color='white';
+">
+<input type="button" value="day" onclick="
+document.querySelector('body').style.backgroundColor='white';
+document.getElementById('body').style.color='black';
+">
+
+
+</body>
+</html>

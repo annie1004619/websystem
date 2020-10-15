@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cafemoa에 오신 것을 환영합니다!</title>
+</head>
+<body>
+<header>
+<h4>CAFEMOA</h4>
+</header>
+<hr/>
+<nav>
+<ul>
+<li><a href="" target="display_area">추천 메뉴</a></li>
+<li><a href="" target="display_area">카페 별 메뉴 보기</a></li>
+<li><a href="" target="display_area">카페 위치 보기</a></li>
+<li><a href="" target="display_area">게시판</a></li>
+<li><a href="" target="display_area">마이페이지</a></li>
+</ul>
+</nav>
+<hr/>
+<article>
+<iframe name="display_area" src="newmenu.html"></iframe>
+</article>
+<hr/>
+<footer>
+<div id="copyright">
+Copyright (c) 2020 CAFEMOA. ALL rights reserved
+</div>
+</footer>
+</body>
+</html>
